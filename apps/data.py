@@ -8,7 +8,7 @@ df_images = pd.read_csv("instagram-data.csv", encoding='cp1252')
 df["Date"] = df["Date"].apply(lambda x: x[:7]+ "-"+x[7:])
 df["Date"] = pd.to_datetime(df["Date"])
 
-#attach the name of the jpg in the assets folder onto df_3
+#attach the name of the jpg in the assets folder onto the dataframe
 df = df.merge(df_images[["Url", "Image Name"]], left_on = "Link to IG Post", right_on = "Url", how = "left")
 
 #first only select plain pizza's, and only take the columsn we will need
@@ -17,7 +17,7 @@ df_2 = df[["Link to IG Post", "Name", "location_lat", "location_lng", "Date", "Y
 #rank each pizzeria so that the most recent date has a rank of 1
 df_2["Date Rank"] = df_2.sort_values(by = "Date", ascending = False).groupby(["Name", "Style"])["Date"].transform("rank")
 
-#now filter only where the rank equals 1
+#now filter only where the rank equals 1 because we only want the most recent date
 df_3 = df_2.loc[df_2["Date Rank"] == 1].copy()
 
 #re categorise the style

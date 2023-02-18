@@ -7,6 +7,7 @@ from app import app, server
 from apps import main
 
 
+#create the header that will be used for the page
 header = dbc.Container([
     dbc.Row([
         dbc.Col(html.Img(src="assets/pizza icon.png", style = {'height': '40%', 'width': '40%'}, className="image-center"),
@@ -17,14 +18,14 @@ header = dbc.Container([
     ], className="col-center")
 ])
 
-# create the page layout using the previously created sidebar
+# create the page layout, which sets each page's url, includes and header and what will be the page content
 app.layout = html.Div([
     dcc.Location(id="url", refresh=False),
     header,
     html.Div(id="page-content")
 ])
 
-# callback to load the correct page content
+# callback to load the page content
 @app.callback(Output("page-content", "children"),
               Input("url", "pathname"))
 def create_page_content(pathname):
@@ -33,7 +34,7 @@ def create_page_content(pathname):
     else:
         return main.layout
 
-
+# run the app
 if __name__ == "__main__":
     print("Running in development mode")
     app.run_server(host="0.0.0.0", port=5000, debug=True)
