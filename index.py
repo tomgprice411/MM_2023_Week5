@@ -1,5 +1,6 @@
-import dash_html_components as html
-import dash_core_components as dcc
+
+from dash import html
+from dash import dcc
 import dash_bootstrap_components as dbc
 from dash.dependencies import Input, Output
 from app import app, server
@@ -8,10 +9,11 @@ from apps import main
 
 header = dbc.Container([
     dbc.Row([
-        dbc.Col(html.Img(src="assets/Pizza.png"),
-                className="col-4"),
-        dbc.Col(html.H1("New York City Pizza"), className="col-6 col-center"),
-        dbc.Col(html.P(), className="col-2")
+        dbc.Col(html.Img(src="assets/pizza icon.png", style = {'height': '40%', 'width': '40%'}, className="image-center"),
+                className="col-2"),
+        dbc.Col(html.H1("New York City Pizza Joint Locations"), className="col-8 col-center"),
+        dbc.Col(html.Img(src="assets/pizza icon.png", style = {'height': '40%', 'width': '40%'}, className="image-center"),
+                className="col-2")
     ], className="col-center")
 ])
 
@@ -21,7 +23,6 @@ app.layout = html.Div([
     header,
     html.Div(id="page-content")
 ])
-
 
 # callback to load the correct page content
 @app.callback(Output("page-content", "children"),
@@ -35,4 +36,4 @@ def create_page_content(pathname):
 
 if __name__ == "__main__":
     print("Running in development mode")
-    app.run_server(host="0.0.0.0", port=5000, debug=False)
+    app.run_server(host="0.0.0.0", port=5000, debug=True)
