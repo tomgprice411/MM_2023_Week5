@@ -12,7 +12,8 @@ from apps.data import df_3
 
 # assign the mapbox token so we can create map graph from mapbox
 #Note: I have a hidden file called '.mapbox_token' which contains my specific token from MapBox. To get the MapBox toek you need to create an account and geenrate a public token
-token = open(".mapbox_token").read() 
+# token = open(".mapbox_token").read() 
+mapbox_access_token = os.environ['MAPBOX_ACCESS_TOKEN']
 
 #now create the layout structure (this is what the app calls from index.py)
 layout = dbc.Container([
