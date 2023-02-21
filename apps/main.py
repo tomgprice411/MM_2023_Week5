@@ -84,6 +84,7 @@ def create_layout(pizza_style,hover):
     #customise the map
     fig.update_layout(mapbox_style="dark", mapbox_accesstoken=token,
                     mapbox_zoom=12, mapbox_center = {"lat": 40.728175, "lon": -73.985147},
+                    uirevision = "constant",
                     margin={"r":0,"t":0,"l":0,"b":0},
                     showlegend = True,
                     legend = dict(title= "Price Range", bgcolor = "#181b1b", font = dict(color = "#ECF0F1"), itemsizing = "trace"),
