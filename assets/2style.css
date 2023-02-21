@@ -35,13 +35,21 @@ h5 {
 
 p {
   font-size: 1rem;
-  margin: 0.5rem 0.75rem;
+  margin: 0.25rem 0.75rem;
   color: var(--title-color);
   font-family: 'Raleway', sans-serif;
   font-weight: bold;
 }
 
 
+.p-commentary {
+  font-size: 1rem;
+  margin: 0.25rem 0.75rem;
+  text-align: center;
+  color: var(--title-color);
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+}
 
 .col-center {
   display: flex;
@@ -67,8 +75,8 @@ p {
 .container-box {
   border-width: 1px;
   border-radius: 6px;
-  margin-top: 0.75rem;
-  margin-bottom: 0.75rem;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
 }
@@ -77,9 +85,9 @@ p {
   border-width: 1px;
   border-radius: 6px;
   margin-top: 0rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0rem;
   padding-top: 0rem;
-  padding-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
 }
 
 .image-center {

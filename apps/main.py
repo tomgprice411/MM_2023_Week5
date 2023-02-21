@@ -19,6 +19,9 @@ token = os.environ['MAPBOX_ACCESS_TOKEN']
 layout = dbc.Container([
         dbc.Container([
             dbc.Row([
+                dbc.Col([html.P("Hover over a marker to preview a pizza parlour's pizza and price", className = "p-commentary")])
+                ]),
+            dbc.Row([
                 dbc.Col([html.P("Select Pizza Style:   ", className = "p-metric-title"),
                         #create a radio button to select whether you the user wants to see plain pizzas or other types of pizza
                         dbc.RadioItems(id = "pizza-style-radio",
